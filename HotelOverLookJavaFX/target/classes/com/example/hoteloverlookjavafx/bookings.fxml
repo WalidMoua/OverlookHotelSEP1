@@ -5,20 +5,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoteloverlookjavafx.Controllers.BookingController">
+<AnchorPane fx:id="idPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoteloverlookjavafx.Controllers.BookingController">
    <children>
-      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #33ccff;">
+      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="110.0" prefWidth="1034.0" style="-fx-background-color: #33ccff;">
          <children>
-            <Label layoutX="324.0" layoutY="26.0" text="Bookings" textAlignment="CENTER" textFill="WHITE">
+            <Label layoutX="414.0" layoutY="26.0" text="Bookings" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Italic" size="50.0" />
                </font>
             </Label>
-            <Button layoutX="766.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToAddBook" style="-fx-background-color: #33ccff;">
+            <Button layoutX="950.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToAddBook" style="-fx-background-color: #33ccff;">
                <graphic>
                   <FontAwesomeIcon glyphName="BOOK" selectionFill="BLACK" size="50" />
-               </graphic>
-            </Button>
+               </graphic></Button>
             <Button layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #33ccff;">
                <graphic>
                   <FontAwesomeIcon glyphName="ARROW_LEFT" selectionFill="BLACK" size="50" />
@@ -26,15 +25,16 @@
             </Button>
          </children>
       </Pane>
-      <TableView layoutY="109.0" fx:id="table" prefHeight="461.0" prefWidth="845.0">
+      <TableView fx:id="table" layoutY="109.0" prefHeight="498.0" prefWidth="1023.0">
         <columns>
           <TableColumn fx:id="guestColumn" prefWidth="196.59999084472656" text="Guest" />
-          <TableColumn fx:id="roomColumn" minWidth="6.20001220703125" prefWidth="69.80001831054688" text="Room Nº" />
-            <TableColumn fx:id="arrivalColumn" prefWidth="83.4000244140625" text="Arrival Date" />
-            <TableColumn fx:id="departureColumn" prefWidth="96.0" text="Departure Date" />
-            <TableColumn fx:id="guestsColumn" prefWidth="71.79998779296875" text="Nº Guests" />
-            <TableColumn fx:id="extraColumn" prefWidth="216.4000244140625" text="Extra information" />
-            <TableColumn fx:id="stateColumn" prefWidth="108.80001220703127" text="State" />
+          <TableColumn fx:id="roomColumn" minWidth="6.20001220703125" prefWidth="75.40000915527344" text="Room Nº" />
+            <TableColumn fx:id="arrivalColumn" prefWidth="134.20001220703125" text="Arrival Date" />
+            <TableColumn fx:id="departureColumn" prefWidth="119.79998779296875" text="Departure Date" />
+            <TableColumn fx:id="guestsColumn" prefWidth="84.20001220703125" text="Nº Guests" />
+            <TableColumn fx:id="extraColumn" prefWidth="263.79998779296875" text="Extra information" />
+            <TableColumn fx:id="stateColumn" prefWidth="152.00006103515625" text="State" />
+            <TableColumn fx:id="idColumn" prefWidth="75.0" visible="false" />
         </columns>
       </TableView>
    </children>

@@ -5,9 +5,13 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @XmlRootElement(name = "booking")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Booking {
+    @XmlElement(name = "id")
+    private int id;
     @XmlElement(name = "guest")
     private Guest guest;
     @XmlElement(name = "dateInterval")
@@ -128,5 +132,13 @@ public class Booking {
 
     public void setExtra(Extra extra) {
         this.extra = extra;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

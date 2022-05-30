@@ -10,6 +10,7 @@ import java.util.ArrayList;
 @XmlRootElement(name = "bookings")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class BookingList {
+
     @XmlElement(name = "booking")
     public ArrayList<Booking> bookings;
 
@@ -19,6 +20,10 @@ public class BookingList {
 
     public void add(Booking booking){
         bookings.add(booking);
+    }
+
+    public void delete(int index){
+        bookings.remove(index);
     }
 
     public void set(Booking booking, int index){
@@ -35,5 +40,15 @@ public class BookingList {
 
     public int size(){
         return bookings.size();
+    }
+
+    public ArrayList<Booking> getAllBookingsCheckedIn(){
+        ArrayList<Booking> array = new ArrayList<>();
+        for(Booking booking : getAllBookings()){
+            if(booking.getState().equals("ARRIVED") || booking.getState() == "ARRIVED"){
+                array.add(booking);
+            }
+        }
+        return array;
     }
 }

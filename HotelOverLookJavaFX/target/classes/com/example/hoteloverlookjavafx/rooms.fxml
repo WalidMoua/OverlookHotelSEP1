@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoteloverlookjavafx.Controllers.RoomController">
    <children>
       <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #33ccff;">
          <children>
-            <Label layoutX="348.0" layoutY="26.0" text="Rooms" textAlignment="CENTER" textFill="WHITE">
+            <Label layoutX="324.0" layoutY="26.0" text="Rooms" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Italic" size="50.0" />
                </font>
             </Label>
-            <Button layoutX="766.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToAddRoom" style="-fx-background-color: #33ccff;">
+            <Button layoutX="766.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #33ccff;">
                <graphic>
                   <FontAwesomeIcon glyphName="BOOK" selectionFill="BLACK" size="50" />
                </graphic>
@@ -26,15 +26,5 @@
             </Button>
          </children>
       </Pane>
-      <TableView layoutY="109.0" fx:id="table" prefHeight="460.0" prefWidth="845.0">
-         <columns>
-            <TableColumn fx:id="typeColumn" prefWidth="140.9" text="Room Type" />
-            <TableColumn fx:id="bedsColumn" prefWidth="140.9" text="Beds" />
-            <TableColumn fx:id="guestAmountColumn" prefWidth="140.9" text="Guest Amount" />
-            <TableColumn fx:id="roomNumberColumn" prefWidth="140.9" text="Room Number" />
-            <TableColumn fx:id="priceColumn" prefWidth="140.9" text="Price" />
-            <TableColumn fx:id="extrasColumn" prefWidth="140.0" text="Extras" />
-         </columns>
-      </TableView>
    </children>
 </AnchorPane>
