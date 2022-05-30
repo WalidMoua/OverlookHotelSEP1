@@ -124,13 +124,13 @@ public class CrudBookingController implements Initializable {
 
     public void onClickComboBox(MouseEvent mouseEvent) {
         if(bookings.getAllBookings()!=null){
+
             for(Booking booking : bookings.getAllBookings()){
                 LocalDate start = new LocalDate(booking.getDateInterval().getStartDate().getYear(),booking.getDateInterval().getStartDate().getMonth(),booking.getDateInterval().getStartDate().getDay());
                 LocalDate end = new LocalDate(booking.getDateInterval().getEndDate().getYear(),booking.getDateInterval().getEndDate().getMonth(),booking.getDateInterval().getEndDate().getDay());
-                if((arrivalField.getValue().isBefore(start)) && (arrivalField.getValue().isBefore(end))){
+                if(!(departureField.getValue().isAfter(new LocalDate(booking.getDateInterval().getStartDate().getYear(),booking.getDateInterval().getStartDate().getMonth(),booking.getDateInterval().getStartDate().getDay()))  && arrivalField.getValue().isBefore(new LocalDate(booking.getDateInterval().getEndDate().getYear(),booking.getDateInterval().getEndDate().getMonth(),booking.getDateInterval().getEndDate().getDay())))){
 
                 }
-                booking.getDateInterval();
             }
         }
     }
