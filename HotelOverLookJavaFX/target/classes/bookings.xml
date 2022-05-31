@@ -35,7 +35,7 @@
         </room>
         <guests>2</guests>
         <extraInfo>dwadawdwa</extraInfo>
-        <totalPrice>1295.0</totalPrice>
+        <totalPrice>1395.0</totalPrice>
         <nightsSpent>5</nightsSpent>
         <state>ARRIVED</state>
         <extra>
@@ -113,9 +113,9 @@
         </room>
         <guests>2</guests>
         <extraInfo></extraInfo>
-        <totalPrice>516.0</totalPrice>
+        <totalPrice>268.0</totalPrice>
         <nightsSpent>4</nightsSpent>
-        <state>BOOKED</state>
+        <state>CLOSED</state>
     </booking>
     <booking>
         <id>3</id>
@@ -154,6 +154,43 @@ Small Kitchen</extras>
         <extraInfo>G test</extraInfo>
         <totalPrice>1813.0</totalPrice>
         <nightsSpent>7</nightsSpent>
+        <state>BOOKED</state>
+    </booking>
+    <booking>
+        <id>4</id>
+        <guest>
+            <name>wadadawawd</name>
+            <phone>dawdwadwa</phone>
+            <birthday>
+                <day>18</day>
+                <month>5</month>
+                <year>2022</year>
+            </birthday>
+        </guest>
+        <dateInterval>
+            <arriveDate>
+                <day>2</day>
+                <month>5</month>
+                <year>2022</year>
+            </arriveDate>
+            <departureDate>
+                <day>12</day>
+                <month>5</month>
+                <year>2022</year>
+            </departureDate>
+        </dateInterval>
+        <room>
+            <number>112</number>
+            <price>169.0</price>
+            <guestAmount>2</guestAmount>
+            <type>Double Room</type>
+            <beds>Twin beds</beds>
+            <extras>Air conditioning</extras>
+        </room>
+        <guests>2</guests>
+        <extraInfo>wdawadwa</extraInfo>
+        <totalPrice>0.0</totalPrice>
+        <nightsSpent>0</nightsSpent>
         <state>BOOKED</state>
     </booking>
 </bookings>

@@ -26,6 +26,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
+import javax.swing.*;
+
 public class RoomController implements Initializable
 {
     private Stage stage;
@@ -78,6 +80,51 @@ public class RoomController implements Initializable
         priceColumn.setCellValueFactory(features -> new ReadOnlyStringWrapper(String.valueOf(features.getValue().getPrice())));
         extrasColumn.setCellValueFactory(features -> new ReadOnlyStringWrapper(features.getValue().getExtras()));
         table.getItems().addAll(oL);
+
+        table.setRowFactory(tv->{
+            TableRow<Room> row = new TableRow<>();
+            row.setOnMouseClicked(event->{
+                if(event.getClickCount() == 2 && (! row.isEmpty())){
+                    Room rowData = row.getItem();
+                    Room room = rooms.getRoomByNumber(rowData.getNumber());
+                    int choice = JOptionPane.showConfirmDialog(null,"Delete Room n: "+room.getNumber());
+                    if(choice==JOptionPane.YES_OPTION){
+                        rooms.delete(room);
+                        Room selectedItem = table.getSelectionModel().getSelectedItem();
+                        table.getItems().remove(selectedItem);
+                        try {
+                            marshallXml();
+                            table.refresh();
+                        } catch (JAXBException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            unmarshallXml();
+                            table.refresh();
+                        } catch (JAXBException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            });
+            return row;
+        });
+    }
+
+    public void marshallXml() throws JAXBException {
+        JAXBContext jaxbContext = JAXBContext.newInstance(RoomList.class);
+        File file = new File("src\\main\\resources\\rooms.xml");
+        Marshaller marshaller = jaxbContext.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.marshal(rooms, file);
+    }
+
+    public void unmarshallXml() throws JAXBException {
+        JAXBContext jaxbContext = JAXBContext.newInstance(RoomList.class);
+        File file = new File("src\\main\\resources\\rooms.xml");
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        rooms = (RoomList) unmarshaller.unmarshal(file);
+        table.refresh();
     }
 
     public RoomController(){
