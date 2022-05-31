@@ -15,8 +15,8 @@
 
 </head>
 <!--getRoomByNumber(311) to get one room and getAllRooms() to get all rooms-->
-<body onload="getAllRooms()">
-    <header>
+<body onload="getAllRooms();">
+    <header >
         <div class="d-none d-lg-block">
             <a href="index.html"><img src="./images/icons/hotelIconWhite.jpg" alt="Overlook hotel icon"
                     class="float-start nav-height"></a>
@@ -141,7 +141,7 @@
                 </form>
             </div>
             <div class="col-12 col-md-6 d-flex justify-content-around mt-3 mb-3">
-                <button type="button" class="btn btn-outline-primary font-SansSerifBldFLFCond booking-form-button">Check
+                <button type="button"   onclick="showOnlynoneBookedRooms();"  class="btn btn-outline-primary font-SansSerifBldFLFCond booking-form-button">Check
                     Availability</button>
             </div>
 
@@ -150,7 +150,7 @@
     </div>
     <div class="container pt-4 pb-5"  id="roomtotal">
       
-     <!-- rooms will show here  -->
+    
     </div>
     <div class="spacing">
        
