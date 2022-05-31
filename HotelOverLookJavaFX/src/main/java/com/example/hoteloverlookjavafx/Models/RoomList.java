@@ -19,10 +19,6 @@ public class RoomList
 
     }
 
-    public void delete(Room room){
-        rooms.remove(room);
-    }
-
     public void add(Room room){
         rooms.add(room);
     }

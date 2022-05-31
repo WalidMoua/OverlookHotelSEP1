@@ -154,7 +154,7 @@ Small Kitchen</extras>
         <extraInfo>G test</extraInfo>
         <totalPrice>1813.0</totalPrice>
         <nightsSpent>7</nightsSpent>
-        <state>ARRIVED</state>
+        <state>BOOKED</state>
     </booking>
     <booking>
         <id>4</id>
@@ -189,8 +189,8 @@ Small Kitchen</extras>
         </room>
         <guests>2</guests>
         <extraInfo>wdawadwa</extraInfo>
-        <totalPrice>1690.0</totalPrice>
-        <nightsSpent>10</nightsSpent>
-        <state>ARRIVED</state>
+        <totalPrice>0.0</totalPrice>
+        <nightsSpent>0</nightsSpent>
+        <state>BOOKED</state>
     </booking>
 </bookings>
