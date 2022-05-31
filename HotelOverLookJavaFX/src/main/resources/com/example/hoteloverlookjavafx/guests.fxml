@@ -6,34 +6,36 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoteloverlookjavafx.Controllers.GuestController">
-   <children>
-      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #33ccff;">
-         <children>
-            <Label layoutX="348.0" layoutY="26.0" text="Guests" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Arial Italic" size="50.0" />
-               </font>
-            </Label>
-            <Button layoutX="766.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToAddUser" style="-fx-background-color: #33ccff;">
-               <graphic>
-                  <FontAwesomeIcon glyphName="USER_PLUS" selectionFill="BLACK" size="50" />
-               </graphic>
-            </Button>
-            <Button layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #33ccff;">
-               <graphic>
-                  <FontAwesomeIcon glyphName="ARROW_LEFT" selectionFill="BLACK" size="50" />
-               </graphic>
-            </Button>
-         </children>
-      </Pane>
-      <TableView layoutY="109.0" fx:id="table" prefHeight="460.0" prefWidth="845.0">
-        <columns>
-            <TableColumn fx:id="nameColumn" prefWidth="175.0" text="Name" />
-            <TableColumn fx:id="phoneColumn" prefWidth="175.0" text="Phone" />
-            <TableColumn fx:id="addressColumn" prefWidth="175.0" text="Address" />
-            <TableColumn fx:id="nationalityColumn" prefWidth="175.0" text="Nationality" />
-            <TableColumn fx:id="birthdayColumn" prefWidth="175.0" text="Birthday" />
-        </columns>
-      </TableView>
-   </children>
+    <children>
+        <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #33ccff;">
+            <children>
+                <Label layoutX="348.0" layoutY="26.0" text="Guests" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Italic" size="50.0" />
+                    </font>
+                </Label>
+                <Button layoutX="766.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToAddUser" style="-fx-background-color: #33ccff;">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="USER_PLUS" selectionFill="BLACK" size="50" />
+                    </graphic>
+                </Button>
+                <Button layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #33ccff;">
+                    <graphic>
+                        <FontAwesomeIcon glyphName="ARROW_LEFT" selectionFill="BLACK" size="50" />
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+        <TableView layoutY="109.0" fx:id="table" prefHeight="460.0" prefWidth="845.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
+                <TableColumn fx:id="nameColumn" prefWidth="165.0" text="Name" />
+                <TableColumn fx:id="arrivalColumn" prefWidth="165.0" text="Arrival" />
+                <TableColumn fx:id="departureColumn" prefWidth="165.0" text="Departure" />
+                <TableColumn fx:id="phoneColumn" prefWidth="133.0" text="Phone" />
+                <TableColumn fx:id="roomColumn" prefWidth="165.0" text="Room" />
+
+            </columns>
+        </TableView>
+    </children>
 </AnchorPane>
