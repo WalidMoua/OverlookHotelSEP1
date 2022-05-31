@@ -10,8 +10,42 @@
     <link rel="stylesheet" href="./style/style.css">
     <script src="./script/jquery-3.5.1.min.js"></script>
     <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="./script/script.js"></script>
-    <script>room(localStorage.getItem("roomNumber"))</script>
+    <script>
+        function room(room) {
+            $.get(
+                "/HotelOverLookJavaFX/src/main/resources/rooms.xml",
+                function (xml, status) {
+                    var roomTitle = "";
+                    var beds = "";
+                    var guestAmount = "";
+                    var number = "";
+                    var price = "";
+                    var extras = "";
+
+                    Array.from($(xml).find("room")).forEach((rooms) => {
+                        if (room == rooms.childNodes[1].textContent) {
+                            console.log(rooms.childNodes[9].textContent)
+                            roomTitle += rooms.childNodes[7].textContent;
+                            beds += rooms.childNodes[9].textContent;
+                            guestAmount += rooms.childNodes[5].textContent;
+                            number += rooms.childNodes[1].textContent;
+                            price += rooms.childNodes[3].textContent;
+                            extras += rooms.childNodes[11].textContent;
+                        }
+                    });
+
+                    $("#roomTitle").html(roomTitle);
+                    $("#beds").html(beds);
+                    $("#guestAmount").html(guestAmount);
+                    $("#number").html(number);
+                    $("#price").html(price);
+                    $("#extras").html(extras);
+                }
+            );
+        }
+        room(localStorage.getItem("roomNumber"))
+
+    </script>
 </head>
 
 <body>
@@ -92,86 +126,88 @@
         </div>
     </header>
 
-    <div class="mb-5">  
+    <div class="mb-5">
         <img src="./images/StanleyOutside.jpg" class="d-block w-100" alt="...">
     </div>
 
 
 
-<div class="container-fluid mt-5 ">
-  <p class="h1 text-blue text-center">FIND YOUR ROOM</p>
-<div class="row">
-    <div class="col-xl-6 ml-5">
-        <div class="carouselBox mtText1">
-            <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="20000">
-                        <img src="./images/rooms/page_suitec8b7462-buona.jpeg" class="d-block w-100 rounded " height="10%" alt="...">
-                    
-                           
-                            
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval1"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        
-                    </div>
-                    <div class="carousel-item " data-bs-interval="20000">
-                        <img src="./images/rooms/page_suitec8b7462-buona.jpeg" class="d-block w-100 rounded " height="10%" alt="...">
-                      
-                            
-                            
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval1"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                      
+    <div class="container-fluid mt-5 ">
+        <p class="h1 text-blue text-center">FIND YOUR ROOM</p>
+        <div class="row">
+            <div class="col-xl-6 ml-5">
+                <div class="carouselBox mtText1">
+                    <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active" data-bs-interval="20000">
+                                <img src="./images/rooms/page_suitec8b7462-buona.jpeg" class="d-block w-100 rounded "
+                                    height="10%" alt="...">
+
+
+
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleInterval1" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleInterval1" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+
+                            </div>
+                            <div class="carousel-item " data-bs-interval="20000">
+                                <img src="./images/rooms/page_suitec8b7462-buona.jpeg" class="d-block w-100 rounded "
+                                    height="10%" alt="...">
+
+
+
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleInterval1" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleInterval1" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="col-xl-6 text-center">
+
+                <p id="roomTitle" class=" mtText3 text-center h1 font-SanSerifBook">Single Bedroom Suite</p>
+
+                <p class="text-blue h3 font-SanSerifBook fs-6 mt-5 pt-5">Bed size</p>
+                <p id="beds" class="fs-4">Error</p>
+
+                <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Max Numer of guests</p>
+                <p id="guestAmount" class="fs-4">Error</p>
+
+                <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Room Numbe</p>
+                <p id="number" class="fs-4">Error</p>
+
+                <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Price</p>
+                <p id="price" class="fs-4">Error</p>
+
+                <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Extras</p>
+                <p id="extras" class="fs-4">Error</p>
+            </div>
         </div>
+
+
+
+
     </div>
-    <div class="col-xl-6 text-center">
-      
-        <p id="roomTitle" class=" mtText3 text-center h1 font-SanSerifBook">Single Bedroom Suite</p>
-
-        <p class="text-blue h3 font-SanSerifBook fs-6 mt-5 pt-5">Bed size</p>
-        <p id="beds" class="fs-4">Error</p>
-
-        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Max Numer of guests</p>
-        <p id="guestAmount" class="fs-4">Error</p>
-
-        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Room Numbe</p>
-        <p id="number" class="fs-4">Error</p>
-
-        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Price</p>
-        <p id="price" class="fs-4">Error</p>
-       
-        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Extras</p>
-        <p id="extras" class="fs-4">Error</p>
-    </div>
-</div>
-     
-       
-       
-   
-</div>
- 
 
 
-   
+
+
     <div class="spacing">
         <ul class="list text-center">
             <li>
@@ -228,8 +264,8 @@
     <script src="./script/jquery-3.5.1.min.js"></script>
     <script src="./script/script.js"></script>
     <script>
-        
-      
+
+
     </script>
 
 </body>

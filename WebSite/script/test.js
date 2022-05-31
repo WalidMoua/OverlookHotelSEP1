@@ -4,6 +4,29 @@ const date1 = new Date("1997-11-20");
 
 console.log(date1);
 
+/* function getXmlFile() {
+  var roomsXml = 1;
+  let bookingXml;
+
+  /*  bookingXml = $.get(
+    "/HotelOverLookJavaFX/src/main/resources/bookings.xml",
+    function (xml, status) {
+      bookingXml = $(xml);
+      console.log(bookingXml.find("name"));
+    }
+  ); 
+
+  roomsXml = $.get(
+    "/HotelOverLookJavaFX/src/main/resources/student.xml",
+    function (xml, status) {
+      roomsXml = $(xml);
+      console.log(roomsXml.find("name").text());
+    }
+  );
+
+  console.log(roomsXml);
+} */
+
 /* function filterList(filter) {
   var filtered = roomList.filter((room) => {
     return room != filter;

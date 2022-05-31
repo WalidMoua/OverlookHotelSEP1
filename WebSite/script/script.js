@@ -114,11 +114,6 @@ $("#start-date").click(function () {
   console.log("cliked");
 });
 
-$(document).ready(function () {
-  setBaseDates();
-  getXmlFile();
-});
-
 function getBooking() {
   // path /HotelOverLookJavaFX/src/main/resources/student.xml
   $.get(
@@ -151,62 +146,43 @@ function checkBooking() {
   isOverlapping(UserInput, date2);
 }
 
-function getXmlFile() {
-  var roomsXml = 1;
-  let bookingXml;
-
-  /*  bookingXml = $.get(
-    "/HotelOverLookJavaFX/src/main/resources/bookings.xml",
-    function (xml, status) {
-      bookingXml = $(xml);
-      console.log(bookingXml.find("name"));
-    }
-  ); */
-
-  roomsXml = $.get(
-    "/HotelOverLookJavaFX/src/main/resources/student.xml",
-    function (xml, status) {
-      roomsXml = $(xml);
-      console.log(roomsXml.find("name").text());
-    }
-  );
-
-  console.log(roomsXml);
-}
 function roomGlobal(room) {
   localStorage.setItem("roomNumber", "");
   localStorage.setItem("roomNumber", room);
 }
 
 function room(room) {
-  console.log("globalThis"+globalThis.yourGlobalVariable);
-  $.get("../../delelte.xml", function (xml, status) {
+  $.get(
+    "/HotelOverLookJavaFX/src/main/resources/rooms.xml",
+    function (xml, status) {
       var roomTitle = "";
       var beds = "";
       var guestAmount = "";
       var number = "";
       var price = "";
       var extras = "";
-    
-      Array.from($(xml).find("room")).forEach(rooms => {
-  
+
+      Array.from($(xml).find("room")).forEach((rooms) => {
         if (room == rooms.childNodes[7].textContent) {
           roomTitle += rooms.childNodes[1].textContent;
           beds += rooms.childNodes[3].textContent;
-          guestAmount +=rooms.childNodes[5].textContent;
-          number +=rooms.childNodes[7].textContent;
+          guestAmount += rooms.childNodes[5].textContent;
+          number += rooms.childNodes[7].textContent;
           price += rooms.childNodes[9].textContent;
-          extras +=rooms.childNodes[11].textContent;       
+          extras += rooms.childNodes[11].textContent;
         }
       });
-    
+
       $("#roomTitle").html(roomTitle);
       $("#beds").html(beds);
       $("#guestAmount").html(guestAmount);
       $("#number").html(number);
       $("#price").html(price);
       $("#extras").html(extras);
-
-  });
+    }
+  );
 }
 
+$(document).ready(function () {
+  setBaseDates();
+});
