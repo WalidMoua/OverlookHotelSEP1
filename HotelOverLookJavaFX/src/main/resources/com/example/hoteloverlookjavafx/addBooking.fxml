@@ -96,7 +96,6 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <ChoiceBox fx:id="stateRoom" layoutX="333.0" layoutY="305.0" prefHeight="26.0" prefWidth="194.0" />
       <CheckBox fx:id="extrasCheck" layoutX="567.0" layoutY="117.0" mnemonicParsing="false" onAction="#clickExtras" text="Extras">
          <font>
             <Font name="System Bold Italic" size="18.0" />
@@ -116,5 +115,6 @@
          </font>
       </Label>
       <TextField fx:id="priceField" disable="true" layoutX="648.0" layoutY="391.0" prefHeight="22.0" prefWidth="86.0" />
+      <ComboBox fx:id="stateRoom" layoutX="334.0" layoutY="305.0" onMouseClicked="#onClickComboBox" prefHeight="26.0" prefWidth="194.0" />
    </children>
 </AnchorPane>

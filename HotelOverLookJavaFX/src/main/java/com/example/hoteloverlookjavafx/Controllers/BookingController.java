@@ -7,7 +7,6 @@ import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
-import javafx.beans.property.ReadOnlyIntegerWrapper;
 import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,14 +20,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BookingController implements Initializable {
+    @FXML AnchorPane idPane;
     @FXML TableColumn<Booking, String> guestColumn;
     @FXML TableColumn<Booking, String> roomColumn;
     @FXML TableColumn<Booking, String> arrivalColumn;
@@ -96,31 +98,56 @@ public class BookingController implements Initializable {
         stateColumn.setCellValueFactory(features-> new ReadOnlyStringWrapper(features.getValue().getState()));
 
         table.setRowFactory(tv->{
-            TableRow<Booking> tableRow = new TableRow<>();
-            tableRow.setOnMouseClicked(event -> {
-                if (event.getClickCount() == 2 && (! tableRow.isEmpty()) ) {
-                    Booking rowData = tableRow.getItem();
-                    System.out.println("Double click on: "+rowData.getId());
-                    try {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("changeBooking.fxml"));
-                        CrudBookingController crudBookingController = new CrudBookingController();
-                        crudBookingController.initPlaceholders(bookings.getBooking(rowData.getId()));
-                        root = FXMLLoader.load(OverLookApplication.class.getResource("changeBooking.fxml"));
-                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                        scene = new Scene(root);
-                        stage.setScene(scene);
-                        stage.show();
-
-                    } catch (IOException e) {
-                        e.printStackTrace();
+            TableRow<Booking> row = new TableRow<>();
+            row.setOnMouseClicked(event->{
+                if(event.getClickCount() == 2 && (! row.isEmpty())){
+                    Booking rowData = row.getItem();
+                    Booking booking = bookings.getBooking(rowData.getId());
+                    int choice = JOptionPane.showConfirmDialog(null,"Delete booking from "+booking.getGuest().getName());
+                    if(choice==JOptionPane.YES_OPTION){
+                        bookings.delete(booking.getId());
+                        Booking selectedItem = table.getSelectionModel().getSelectedItem();
+                        table.getItems().remove(selectedItem);
+                        try {
+                            marshallXml();
+                            table.refresh();
+                        } catch (JAXBException e) {
+                            e.printStackTrace();
+                        }
+                        try {
+                            unmarshallXml();
+                            table.refresh();
+                        } catch (JAXBException e) {
+                            e.printStackTrace();
+                        }
                     }
-
                 }
             });
-            return tableRow ;
+            return row;
         });
 
+    }
 
+    public void marshallXml() throws JAXBException {
+        JAXBContext jaxbContext = JAXBContext.newInstance(BookingList.class);
+        File file = new File("src\\main\\resources\\bookings.xml");
+        Marshaller marshaller = jaxbContext.createMarshaller();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        marshaller.marshal(bookings, file);
+    }
+
+    public void unmarshallXml() throws JAXBException {
+        JAXBContext jaxbContext = JAXBContext.newInstance(BookingList.class);
+        File file = new File("src\\main\\resources\\bookings.xml");
+        Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+        bookings = (BookingList) unmarshaller.unmarshal(file);
+        if(bookings!=null){
+            for (Booking booking : bookings.getAllBookings()){
+                booking.setId(bookings.getAllBookings().indexOf(booking));
+            }
+            marshallXml();
+        }
+        table.refresh();
     }
 
     public BookingController(){

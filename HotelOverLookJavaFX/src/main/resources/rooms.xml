@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<rooms>
+    <room>
+        <number>301</number>
+        <price>259.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Single Bedroom Suite</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning, View, Small Kitchen</extras>
+    </room>
+    <room>
+        <number>302</number>
+        <price>259.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Single Bedroom Suite</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning, View, Small Kitchen</extras>
+    </room>
+    <room>
+        <number>303</number>
+        <price>259.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Single Bedroom Suite</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning, View, Small Kitchen</extras>
+    </room>
+    <room>
+        <number>304</number>
+        <price>339.0</price>
+        <guestAmount>4</guestAmount>
+        <type>Double Bedroom Suite</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning, Smoking allowed(with extra cost), View, Small Kitchen</extras>
+    </room>
+    <room>
+        <number>305</number>
+        <price>399.0</price>
+        <guestAmount>6</guestAmount>
+        <type>Triple Bedroom Suite</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning, Smoking allowed(with extra cost), View, Small Kitchen</extras>
+    </room>
+
+    <room>
+        <number>306</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>307</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>308</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>309</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>310</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>311</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>312</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>313</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>314</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>201</number>
+        <price>129.0</price>
+        <guestAmount>1</guestAmount>
+        <type>Single Room</type>
+        <beds>Single Bed</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>202</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>203</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>204</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>205</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>206</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>207</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>208</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>209</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>210</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>211</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>212</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>213</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>214</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>101</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>102</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>103</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>104</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>105</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>106</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>107</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>108</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>109</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>109</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>109</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>King Size</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+    <number>110</number>
+    <price>169.0</price>
+    <guestAmount>2</guestAmount>
+    <type>Double Room</type>
+    <beds>Twin beds</beds>
+    <extras>Air conditioning</extras>
+</room>
+    <room>
+        <number>111</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>Twin beds</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>112</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>Twin beds</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>113</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>Twin beds</beds>
+        <extras>Air conditioning</extras>
+    </room>
+    <room>
+        <number>114</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>Twin beds</beds>
+        <extras>Air conditioning</extras>
+    </room>
+</rooms>

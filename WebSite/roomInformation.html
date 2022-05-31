@@ -4,17 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Booking</title>
+    <title>Outlook</title>
+
     <link rel="stylesheet" type="text/css" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style/style.css">
     <script src="./script/jquery-3.5.1.min.js"></script>
     <script src="./bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="./script/script.js"></script>
- 
-    
+    <script>room(localStorage.getItem("roomNumber"))</script>
 </head>
 
 <body>
+
     <header>
         <div class="d-none d-lg-block">
             <a href="index.html"><img src="./images/icons/hotelIconWhite.jpg" alt="Overlook hotel icon"
@@ -56,7 +57,6 @@
             </div>
         </div>
 
-
         <div class="d-lg-none d-block">
             <nav class="navbar navbar-expand-lg bg-blue">
                 <div class="container-fluid ">
@@ -91,95 +91,87 @@
 
         </div>
     </header>
-    <div class="mb-5">
+
+    <div class="mb-5">  
         <img src="./images/StanleyOutside.jpg" class="d-block w-100" alt="...">
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12 text-center">
-                <form action="">
-                    <label for="browser" class="h2">Choose your room from the list:</label>
 
-                    <input list="rooms" name="Single suite">
-                    <datalist id="rooms">
-                        <option selected="selected" value="Single suite">
-                        <option value="Double suit">
-                        <option value="Triple Suite">
-                        <option value="Single Room">
-                        <option value="Double Room">
-                    </datalist>
-                </form>
-            </div>
-            <div class="col-xl-6 text-center">
-                <label for="start" class="h2">Start date:</label>
-                <input type="date" id="start" name="trip-start" value="2022-07-22" min="2022-07-22" max="2023-12-31">
-            </div>
-            <div class="col-xl-6 text-center">
-                <label for="start" class="h2">End date:</label>
-                <input type="date" id="start" name="trip-start" value="2022-07-23" min="2022-06-23" max="2023-12-31">
-            </div>
-            <div class="col-xl-12 text-center mt-3">
-                <p class="font-SansSerifBldFLFCond h3">AVAILABILITY: <span class="red"> Not Available</span></p>
-            </div>
-            <div class="col-xl-12 text-center mt-5">
-                <button type="button" class="btn btn-outline-primary font-SansSerifBldFLFCond">Check
-                    Availability</button>
-            </div>
-        </div>
-    </div>
-    <div class="container pt-4 pb-5">
-        <!--FIND YOUR ROOM TITLE START-->
-        <!--dscefreghtjykujtyhtrewqrtjkyulikujyfhdtrgseagrsdtfjykulhi;lkuyjhtrgesrhdtjfkgj-->
-        <!--FIND YOUR ROOM TITLE END-->
-        <div class="row pt-5">
-            <div class="col-xl-6">
-                <p class="text-center text-blue font-SansSerifBldFLFCond h2">Room 404</p>
-                <p class="text-center h4 mt-4">Suite</p>
-                <p class="text-center h4">Historyc suits with a cassic look</p>
-                <img class="mx-auto d-block rounded" src="./images/rooms/page_suitec8b7462-buona.jpeg" alt="Room"
-                    title="Room" width="90%">
-                <div class="d-flex">
-                    <p class="text-blue marginLeft25 h3"><a href="./roomInformation.html" onclick="roomGlobal(404)">DETAILS >></a></p>
-                    <p class="text-blue marginLeftRight h3"> BOOK >></p>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <p class="text-center text-blue font-SansSerifBldFLFCond h2">Room 303</p>
-                <p class="text-center h4 mt-4">Single</p>
-                <p class="text-center h4">A small and elegant single bedroom</p>
-                <img class="rounded mx-auto d-block" src="./images/rooms/page_suitec8b7462-buona.jpeg" alt="Room"
-                    title="Room" width="90%">
-                <div class="d-flex">
-                    <p class="text-blue marginLeft25 h3"><a href="./roomInformation.html" onclick="roomGlobal(303)">DETAILS >></a></p>
-                    <p class="text-blue marginLeftRight h3"> BOOK >></p>
-                </div>
-            </div>
-        </div>
-        <div class="row pt-5">
-            <div class="col-xl-6">
-                <p class="text-center text-blue font-SansSerifBldFLFCond h2">Room 505</p>
-                <p class="text-center h4 mt-4">Suite</p>
-                <p class="text-center h4">Historyc suits with a cassic look</p>
-                <img class="rounded mx-auto d-block " src="./images/rooms/page_suitec8b7462-buona.jpeg" alt="Room"
-                    title="Room" width="90%">
-                <div class="d-flex">
-                    <p class="text-blue marginLeft25 h3"><a href="./roomInformation.html" onclick="roomGlobal(505)">DETAILS >></a></p>
-                    <p class="text-blue marginLeftRight h3"> BOOK >></p>
-                </div>
-            </div>
-            <div class="col-xl-6">
-                <p class="text-center text-blue font-SansSerifBldFLFCond h2">Room 606</p>
-                <p class="text-center h4 mt-4">Single</p>
-                <p class="text-center h4">A small and elegant single bedroom</p>
-                <img class="rounded mx-auto d-block" src="./images/rooms/page_suitec8b7462-buona.jpeg" alt="Room"
-                    title="Room" width="90%">
-                <div class="d-flex">
-                    <p class="text-blue marginLeft25 h3"><a href="./roomInformation.html" onclick="roomGlobal(606)">DETAILS >></a></p>
-                    <p class="text-blue marginLeftRight h3"> BOOK >></p>
+
+
+<div class="container-fluid mt-5 ">
+  <p class="h1 text-blue text-center">FIND YOUR ROOM</p>
+<div class="row">
+    <div class="col-xl-6 ml-5">
+        <div class="carouselBox mtText1">
+            <div id="carouselExampleInterval1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="20000">
+                        <img src="./images/rooms/page_suitec8b7462-buona.jpeg" class="d-block w-100 rounded " height="10%" alt="...">
+                    
+                           
+                            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        
+                    </div>
+                    <div class="carousel-item " data-bs-interval="20000">
+                        <img src="./images/rooms/page_suitec8b7462-buona.jpeg" class="d-block w-100 rounded " height="10%" alt="...">
+                      
+                            
+                            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                      
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="col-xl-6 text-center">
+      
+        <p id="roomTitle" class=" mtText3 text-center h1 font-SanSerifBook">Single Bedroom Suite</p>
+
+        <p class="text-blue h3 font-SanSerifBook fs-6 mt-5 pt-5">Bed size</p>
+        <p id="beds" class="fs-4">Error</p>
+
+        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Max Numer of guests</p>
+        <p id="guestAmount" class="fs-4">Error</p>
+
+        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Room Numbe</p>
+        <p id="number" class="fs-4">Error</p>
+
+        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Price</p>
+        <p id="price" class="fs-4">Error</p>
+       
+        <p class="text-blue h3 font-SanSerifBook fs-6 mt-4">Extras</p>
+        <p id="extras" class="fs-4">Error</p>
+    </div>
+</div>
+     
+       
+       
+   
+</div>
+ 
+
+
+   
     <div class="spacing">
         <ul class="list text-center">
             <li>
@@ -227,13 +219,19 @@
         </div>
 
     </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <script src="./script/jquery-3.5.1.min.js"></script>
+    <script src="./script/script.js"></script>
     <script>
-     
-
-     
-
-
+        
+      
     </script>
+
 </body>
 
 </html>

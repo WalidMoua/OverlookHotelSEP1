@@ -22,6 +22,10 @@ public class BookingList {
         bookings.add(booking);
     }
 
+    public void delete(int index){
+        bookings.remove(index);
+    }
+
     public void set(Booking booking, int index){
         bookings.set(index, booking);
     }

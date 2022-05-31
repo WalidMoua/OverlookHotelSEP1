@@ -14,6 +14,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import com.example.hoteloverlookjavafx.Models.Booking;
 
@@ -24,21 +25,6 @@ import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class CrudBookingController implements Initializable {
-    @FXML TextField nameField1;
-    @FXML TextField phoneField1;
-    @FXML DatePicker birthdayField1;
-    @FXML TextField addressField1;
-    @FXML TextField nationalityField1;
-    @FXML DatePicker arrivalField1;
-    @FXML DatePicker departureField1;
-    @FXML TextField guestsField1;
-    @FXML TextArea extraInfoField1;
-    @FXML ChoiceBox<String> stateBox1;
-    @FXML ChoiceBox stateRoom1;
-    @FXML CheckBox extrasCheck1;
-    @FXML TextArea extrasField1;
-    @FXML TextField priceField1;
-
     @FXML TextField nameField;
     @FXML TextField phoneField;
     @FXML DatePicker birthdayField;
@@ -51,7 +37,7 @@ public class CrudBookingController implements Initializable {
     @FXML TextArea extrasField;
     @FXML TextField priceField;
     @FXML ChoiceBox<String> stateBox;
-    @FXML ChoiceBox stateRoom;
+    @FXML ComboBox<Room> stateRoom;
     @FXML CheckBox extrasCheck;
     private BookingList bookings = new BookingList();
     private Stage stage;
@@ -63,27 +49,9 @@ public class CrudBookingController implements Initializable {
         stateBox.getItems().add("BOOKED");
         stateBox.getItems().add("ARRIVED");
         stateBox.getItems().add("CLOSED");
-        stateBox1.getItems().add("BOOKED");
-        stateBox1.getItems().add("ARRIVED");
-        stateBox1.getItems().add("CLOSED");
-    }
-
-    public void initPlaceholders(Booking booking){
-        nameField1.setText(booking.getGuest().getName());
-        phoneField1.setText(booking.getGuest().getPhone());
-        LocalDate localDate = LocalDate.of(booking.getGuest().getBirthday().getYear(), booking.getGuest().getBirthday().getMonth(), booking.getGuest().getBirthday().getDay());
-        birthdayField1.setValue(localDate);
-        nationalityField1.setText(booking.getGuest().getNationality());
-        addressField1.setText(booking.getGuest().getAddress());
-        arrivalField1.setValue(LocalDate.of(booking.getDateInterval().getStartDate().getYear(),booking.getDateInterval().getStartDate().getMonth(),booking.getDateInterval().getStartDate().getDay()));
-        departureField1.setValue(LocalDate.of(booking.getDateInterval().getEndDate().getYear(),booking.getDateInterval().getEndDate().getMonth(),booking.getDateInterval().getEndDate().getDay()));
-        guestsField1.setText(String.valueOf(booking.getGuests()));
-        extraInfoField1.setText(booking.getExtraInfo());
-        if(booking.getExtra().getExtras()== "" || booking.getExtra().getExtras().equals(""))
-            extrasCheck1.setDisable(false);
-        priceField1.setText(String.valueOf(booking.getExtra().getPriceExtra()));
 
     }
+
 
     public CrudBookingController(){
         JAXBContext jaxbContext = null;
@@ -110,6 +78,7 @@ public class CrudBookingController implements Initializable {
             e.printStackTrace();
         }
     }
+
 
     public void switchBack(ActionEvent event) throws IOException {
         root = FXMLLoader.load(OverLookApplication.class.getResource("bookings.fxml"));
@@ -153,6 +122,16 @@ public class CrudBookingController implements Initializable {
         stage.show();
     }
 
-    public void changeBooking(ActionEvent actionEvent) {
+    public void onClickComboBox(MouseEvent mouseEvent) {
+        if(bookings.getAllBookings()!=null){
+
+            for(Booking booking : bookings.getAllBookings()){
+                LocalDate start = new LocalDate(booking.getDateInterval().getStartDate().getYear(),booking.getDateInterval().getStartDate().getMonth(),booking.getDateInterval().getStartDate().getDay());
+                LocalDate end = new LocalDate(booking.getDateInterval().getEndDate().getYear(),booking.getDateInterval().getEndDate().getMonth(),booking.getDateInterval().getEndDate().getDay());
+                if(!(departureField.getValue().isAfter(new LocalDate(booking.getDateInterval().getStartDate().getYear(),booking.getDateInterval().getStartDate().getMonth(),booking.getDateInterval().getStartDate().getDay()))  && arrivalField.getValue().isBefore(new LocalDate(booking.getDateInterval().getEndDate().getYear(),booking.getDateInterval().getEndDate().getMonth(),booking.getDateInterval().getEndDate().getDay())))){
+
+                }
+            }
+        }
     }
 }
