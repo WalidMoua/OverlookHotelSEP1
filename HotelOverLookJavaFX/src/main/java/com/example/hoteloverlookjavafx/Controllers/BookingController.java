@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
@@ -30,6 +31,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class BookingController implements Initializable {
+    @FXML Button checkInButton;
     @FXML AnchorPane idPane;
     @FXML TableColumn<Booking, String> guestColumn;
     @FXML TableColumn<Booking, String> roomColumn;
@@ -85,7 +87,7 @@ public class BookingController implements Initializable {
 
         ObservableList<Booking> oL = FXCollections.observableArrayList();
         if(bookings!=null) {
-            oL.addAll(bookings.getAllBookings());
+            oL.addAll(bookings.getAllBookingsBooked());
             table.getItems().addAll(oL);
         }
         idColumn.setCellValueFactory(features-> new ReadOnlyStringWrapper(String.valueOf(features.getValue().getId())));
@@ -125,7 +127,19 @@ public class BookingController implements Initializable {
             });
             return row;
         });
+    }
 
+    public void checkInButton(ActionEvent event) throws IOException, JAXBException {
+        Booking booking = bookings.getBooking(table.getSelectionModel().getSelectedItem().getId());
+        booking.setState("ARRIVED");
+        bookings.set(booking, booking.getId());
+        marshallXml();
+        unmarshallXml();
+        root = FXMLLoader.load(OverLookApplication.class.getResource("guests.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void marshallXml() throws JAXBException {
@@ -169,7 +183,6 @@ public class BookingController implements Initializable {
         } catch (JAXBException e) {
             e.printStackTrace();
         }
-
         try {
             if (unmarshaller != null) {
                 bookings = (BookingList) unmarshaller.unmarshal(file);

@@ -5,6 +5,7 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 @XmlRootElement(name = "bookings")
@@ -42,10 +43,34 @@ public class BookingList {
         return bookings.size();
     }
 
-    public ArrayList<Booking> getAllBookingsCheckedIn(){
+    public ArrayList<Booking> getAllBookingsCheckIn(){
         ArrayList<Booking> array = new ArrayList<>();
         for(Booking booking : getAllBookings()){
             if(booking.getState().equals("ARRIVED") || booking.getState() == "ARRIVED"){
+                array.add(booking);
+            }
+        }
+        return array;
+    }
+
+    public ArrayList<Booking> getAllBookingsBooked() {
+        ArrayList<Booking> array = new ArrayList<>();
+        for(Booking booking : getAllBookings()){
+            if(booking.getState().equals("BOOKED") || booking.getState() == "BOOKED"){
+                array.add(booking);
+            }
+        }
+        return array;
+    }
+
+    public ArrayList<Booking> getAllBookingsToday() {
+        LocalDate currentDate = LocalDate.now();
+        ArrayList<Booking> array = new ArrayList<>();
+        for(Booking booking : getAllBookings()){
+            LocalDate arrivalDate = LocalDate.of(booking.getDateInterval().getStartDate().getYear(),booking.getDateInterval().getStartDate().getMonth(),booking.getDateInterval().getStartDate().getDay());
+            LocalDate departureDate = LocalDate.of(booking.getDateInterval().getEndDate().getYear(),booking.getDateInterval().getEndDate().getMonth(),booking.getDateInterval().getEndDate().getDay());
+
+            if(arrivalDate.isEqual(currentDate) || departureDate.isEqual(currentDate)){
                 array.add(booking);
             }
         }

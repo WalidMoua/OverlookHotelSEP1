@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoteloverlookjavafx.Controllers.HomeController">
    <children>
-      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #33ccff;">
+      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #001D6E;">
          <children>
             <Label layoutX="305.0" layoutY="26.0" text="Dashboard" textAlignment="CENTER" textFill="WHITE">
                <font>
@@ -28,7 +28,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#switchToClients" prefHeight="181.0" prefWidth="386.0" style="-fx-background-radius: 0;" text="Guests">
+            <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#switchToClients" prefHeight="181.0" prefWidth="386.0" style="-fx-background-radius: 0;" text="Active Bookings">
                <graphic>
                   <FontAwesomeIcon fill="#2d75e8" glyphName="GROUP" size="50" />
                </graphic>

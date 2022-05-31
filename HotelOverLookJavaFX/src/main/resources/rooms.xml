@@ -6,7 +6,9 @@
         <guestAmount>2</guestAmount>
         <type>Single Bedroom Suite</type>
         <beds>King Size</beds>
-        <extras>Air conditioning, View, Small Kitchen</extras>
+        <extras>Air conditioning
+View
+Small Kitchen</extras>
     </room>
     <room>
         <number>302</number>
@@ -14,7 +16,9 @@
         <guestAmount>2</guestAmount>
         <type>Single Bedroom Suite</type>
         <beds>King Size</beds>
-        <extras>Air conditioning, View, Small Kitchen</extras>
+        <extras>Air conditioning
+View
+Small Kitchen</extras>
     </room>
     <room>
         <number>303</number>
@@ -22,7 +26,9 @@
         <guestAmount>2</guestAmount>
         <type>Single Bedroom Suite</type>
         <beds>King Size</beds>
-        <extras>Air conditioning, View, Small Kitchen</extras>
+        <extras>Air conditioning
+View
+Small Kitchen</extras>
     </room>
     <room>
         <number>304</number>
@@ -30,7 +36,10 @@
         <guestAmount>4</guestAmount>
         <type>Double Bedroom Suite</type>
         <beds>King Size</beds>
-        <extras>Air conditioning, Smoking allowed(with extra cost), View, Small Kitchen</extras>
+        <extras>Air conditioning
+Smoking allowed(with extra cost)
+View
+Small Kitchen</extras>
     </room>
     <room>
         <number>305</number>
@@ -38,7 +47,10 @@
         <guestAmount>6</guestAmount>
         <type>Triple Bedroom Suite</type>
         <beds>King Size</beds>
-        <extras>Air conditioning, Smoking allowed(with extra cost), View, Small Kitchen</extras>
+        <extras>Air conditioning
+Smoking allowed(with extra cost)
+View
+Small Kitchen</extras>
     </room>
 
     <room>
@@ -314,13 +326,13 @@
         <extras>Air conditioning</extras>
     </room>
     <room>
-    <number>110</number>
-    <price>169.0</price>
-    <guestAmount>2</guestAmount>
-    <type>Double Room</type>
-    <beds>Twin beds</beds>
-    <extras>Air conditioning</extras>
-</room>
+        <number>110</number>
+        <price>169.0</price>
+        <guestAmount>2</guestAmount>
+        <type>Double Room</type>
+        <beds>Twin beds</beds>
+        <extras>Air conditioning</extras>
+    </room>
     <room>
         <number>111</number>
         <price>169.0</price>

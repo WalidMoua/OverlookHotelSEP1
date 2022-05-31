@@ -7,21 +7,26 @@
 
 <AnchorPane fx:id="idPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1023.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoteloverlookjavafx.Controllers.BookingController">
    <children>
-      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="110.0" prefWidth="1034.0" style="-fx-background-color: #33ccff;">
+      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="110.0" prefWidth="1034.0" style="-fx-background-color: #001D6E;">
          <children>
             <Label layoutX="414.0" layoutY="26.0" text="Bookings" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Italic" size="50.0" />
                </font>
             </Label>
-            <Button layoutX="950.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToAddBook" style="-fx-background-color: #33ccff;">
+            <Button layoutX="950.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToAddBook" style="-fx-background-color: #001D6E;">
                <graphic>
                   <FontAwesomeIcon glyphName="BOOK" selectionFill="BLACK" size="50" />
                </graphic></Button>
-            <Button layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #33ccff;">
+            <Button layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #001D6E;">
                <graphic>
                   <FontAwesomeIcon glyphName="ARROW_LEFT" selectionFill="BLACK" size="50" />
                </graphic>
+            </Button>
+            <Button fx:id="checkInButton" layoutX="691.0" layoutY="43.0" mnemonicParsing="false" onAction="#checkInButton" text="Check-In">
+               <font>
+                  <Font name="Calibri Bold Italic" size="15.0" />
+               </font>
             </Button>
          </children>
       </Pane>

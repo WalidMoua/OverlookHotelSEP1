@@ -9,5 +9,8 @@
         <module name="HotelOverLookJavaFX" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="HotelOverLookJavaFX" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -5,8 +5,6 @@ import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 @XmlRootElement(name = "booking")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Booking {

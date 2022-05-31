@@ -9,30 +9,34 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 public class Room {
     private int number;
     private float price;
+    private int guestAmount;
     private String type;
-    private int beds;
-    private int bedRooms;
+    private String beds;
+    private String extras;
+
 
     public Room(){
 
     }
-
     //basic constructor
-    public Room(int n, float p, String t, int b, int bR){
-        this.number = n;
-        this.price = p;
+    public Room(String t, String b, int am, int n, float p, String ex){
         this.type = t;
         this.beds = b;
-        this.bedRooms = bR;
+        this.guestAmount = am;
+        this.number = n;
+        this.price = p;
+        this.extras = ex;
+
     }
 
     //function to change room info
-    private void changeRoomInfo(int n, float p, String t, int b, int bR){
-        this.number = n;
-        this.price = p;
+    private void changeRoomInfo(String t, String b, int am, int n, float p, String ex){
         this.type = t;
         this.beds = b;
-        this.bedRooms = bR;
+        this.guestAmount = am;
+        this.number = n;
+        this.price = p;
+        this.extras = ex;
     }
 
     //GET AND SETTERS
@@ -52,6 +56,15 @@ public class Room {
         this.price = price;
     }
 
+    public void setGuestAmount(int guestAmount) {
+        this.guestAmount = guestAmount;
+    }
+
+    public int getGuestAmount()
+    {
+        return guestAmount;
+    }
+
     public String getType() {
         return type;
     }
@@ -60,19 +73,21 @@ public class Room {
         this.type = type;
     }
 
-    public int getBeds() {
+    public String getBeds() {
         return beds;
     }
 
-    public void setBeds(int beds) {
+    public void setBeds(String beds) {
         this.beds = beds;
     }
 
-    public int getBedRooms() {
-        return bedRooms;
+    public void setExtras(String extras) {
+        this.extras = extras;
     }
 
-    public void setBedRooms(int bedRooms) {
-        this.bedRooms = bedRooms;
+    public String getExtras()
+    {
+        return extras;
     }
+
 }

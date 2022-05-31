@@ -7,14 +7,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hoteloverlookjavafx.Controllers.CrudBookingController">
    <children>
-      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #33ccff;">
+      <Pane layoutX="-10.0" layoutY="-1.0" prefHeight="109.0" prefWidth="854.0" style="-fx-background-color: #001D6E;">
          <children>
             <Label layoutX="280.0" layoutY="26.0" text="New Booking" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Arial Italic" size="50.0" />
                </font>
             </Label>
-            <Button layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchBack" style="-fx-background-color: #33ccff;">
+            <Button layoutX="26.0" layoutY="26.0" mnemonicParsing="false" onAction="#switchBack" style="-fx-background-color: #001D6E;">
                <graphic>
                   <FontAwesomeIcon glyphName="ARROW_LEFT" selectionFill="BLACK" size="50" />
                </graphic>
@@ -74,12 +74,12 @@
          </font>
       </Label>
       <TextField fx:id="guestsField" layoutX="364.0" layoutY="229.0" prefHeight="26.0" prefWidth="162.0" />
-      <Label layoutX="34.0" layoutY="369.0" text="Extra Information about the booking">
+      <Label layoutX="25.0" layoutY="346.0" text="Extra Information about the booking">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextArea fx:id="extraInfoField" layoutX="36.0" layoutY="392.0" prefHeight="163.0" prefWidth="507.0" />
+      <TextArea fx:id="extraInfoField" layoutX="26.0" layoutY="369.0" prefHeight="187.0" prefWidth="242.0" />
       <Label layoutX="291.0" layoutY="270.0" text="State">
          <font>
             <Font size="15.0" />
@@ -102,7 +102,7 @@
          </font>
       </CheckBox>
       <Separator layoutX="548.0" layoutY="131.0" orientation="VERTICAL" prefHeight="429.0" prefWidth="6.0" />
-      <Separator layoutX="276.0" layoutY="142.0" orientation="VERTICAL" prefHeight="200.0" />
+      <Separator layoutX="276.0" layoutY="142.0" orientation="VERTICAL" prefHeight="418.0" prefWidth="6.0" />
       <Label layoutX="567.0" layoutY="151.0" text="Extras:">
          <font>
             <Font size="15.0" />
@@ -116,5 +116,30 @@
       </Label>
       <TextField fx:id="priceField" disable="true" layoutX="648.0" layoutY="391.0" prefHeight="22.0" prefWidth="86.0" />
       <ComboBox fx:id="stateRoom" layoutX="334.0" layoutY="305.0" onMouseClicked="#onClickComboBox" prefHeight="26.0" prefWidth="194.0" />
+      <Label layoutX="287.0" layoutY="368.0" prefHeight="22.0" prefWidth="76.0" text="Room Info:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="price" layoutX="287.0" layoutY="395.0" prefHeight="22.0" prefWidth="254.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="extras" layoutX="283.0" layoutY="431.0" prefHeight="22.0" prefWidth="254.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="beds" layoutX="282.0" layoutY="466.0" prefHeight="22.0" prefWidth="254.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="type" layoutX="282.0" layoutY="502.0" prefHeight="22.0" prefWidth="254.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

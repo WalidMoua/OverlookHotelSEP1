@@ -40,4 +40,3 @@ public class GuestList {
         return guests.size();
     }
 }
-   

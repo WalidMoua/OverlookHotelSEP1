@@ -45,14 +45,18 @@ public class CrudRoomController
         File file = new File("src\\main\\resources\\rooms.xml");
         Unmarshaller unmarshaller = null;
         try{
+            if (jaxbContext != null) {
                 unmarshaller = jaxbContext.createUnmarshaller();
+            }
         } catch (JAXBException e) {
             e.printStackTrace();
         }
 
         try
         {
+            if (unmarshaller != null) {
                 rooms = (RoomList) unmarshaller.unmarshal(file);
+            }
         } catch (JAXBException e) {
             e.printStackTrace();
         }
