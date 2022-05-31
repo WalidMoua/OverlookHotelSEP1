@@ -152,21 +152,24 @@ function checkBooking() {
 }
 
 function getXmlFile() {
-  $.get(
+  var roomsXml = 1;
+  let bookingXml;
+
+  /*  bookingXml = $.get(
+    "/HotelOverLookJavaFX/src/main/resources/bookings.xml",
+    function (xml, status) {
+      bookingXml = $(xml);
+      console.log(bookingXml.find("name"));
+    }
+  ); */
+
+  roomsXml = $.get(
     "/HotelOverLookJavaFX/src/main/resources/student.xml",
     function (xml, status) {
-      let myXml = $(xml);
-      let room = myXml.find("room");
-      console.log(room.text());
-      room.each(function () {
-        let year = $(this).find("year").text();
-        let month = $(this).find("month").text();
-        let day = $(this).find("day").text();
-
-        let d = new Date(year + "-" + month + "-" + day);
-        console.log(d);
-        console.log(year + "-" + month + "-" + day);
-      });
+      roomsXml = $(xml);
+      console.log(roomsXml.find("name").text());
     }
   );
+
+  console.log(roomsXml);
 }
