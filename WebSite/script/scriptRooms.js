@@ -1,5 +1,6 @@
-
-
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
 function getAllRooms() {
     $.get(
@@ -12,8 +13,7 @@ function getAllRooms() {
             var price = "";
             var extras = "";
             var div =" <div class='row pt-5'>";
-            Array.from($(xml).find("room")).forEach((rooms) => {
-               // if (room != rooms.childNodes[1].textContent) {                
+            Array.from($(xml).find("room")).forEach((rooms) => {             
                     roomTitle = rooms.childNodes[7].textContent;
                     //1 -> room number
                     //3 -> room price
@@ -26,17 +26,13 @@ function getAllRooms() {
                     number = "Room " + rooms.childNodes[1].textContent;
                     price = rooms.childNodes[3].textContent;
                     extras = rooms.childNodes[11].textContent;
-                    div += " <div class='col-xl-6'><p class='text-center text-blue font-SansSerifBldFLFCond h2'>" + number + "</p><p class='text-center h4 mt-4'>" + roomTitle + "</p><p class='text-center h4'>Historyc suits with a cassic look</p><img class='mx-auto d-block rounded' src='./images/rooms/page_suitec8b7462-buona.jpeg' alt='Room'title='Room' width='90%'><div class='d-flex'><p class='text-blue marginLeft25 h3'><a href='./roomInformation.html'onclick='roomGlobal(" + rooms.childNodes[1].textContent + ")'>DETAILS >></a></p><p class='text-blue marginLeftRight h3'> BOOK >></p> </div></div>";
-                    $("#roomtotal").html(div);
-                //}
+                    div += " <div class='col-xl-6'><p class='text-center text-blue font-SansSerifBldFLFCond h2'>" + number + "</p><p class='text-center h4 mt-4'>" + roomTitle + "</p><p class='text-center h4'>Historyc suits with a cassic look</p><img class='mx-auto d-block rounded' src='./images/rooms/roomsRandom/"+getRandomInt(18)+".jpg' alt='Room'title='Room' width='90%'><div class='d-flex'><p class='text-blue marginLeft25 h3'><a href='./roomInformation.html'onclick='roomGlobal(" + rooms.childNodes[1].textContent + ")'>DETAILS >></a></p> <a href='./contactUs.html#booked' class='text-blue marginLeftRight h3'> BOOK >></a> </div></div>";
+                    $("#roomtotal").html(div);      
             });
             div +="</div>";
-
-
         }
     );
 }
-
 
 function getRoomByNumber(roomNumber){
     $.get(
@@ -63,7 +59,7 @@ function getRoomByNumber(roomNumber){
                     number = "Room " + rooms.childNodes[1].textContent;
                     price = rooms.childNodes[3].textContent;
                     extras = rooms.childNodes[11].textContent;
-                    div += " <div class='col-xl-6'><p class='text-center text-blue font-SansSerifBldFLFCond h2'>" + number + "</p><p class='text-center h4 mt-4'>" + roomTitle + "</p><p class='text-center h4'>Historyc suits with a cassic look</p><img class='mx-auto d-block rounded' src='./images/rooms/page_suitec8b7462-buona.jpeg' alt='Room'title='Room' width='90%'><div class='d-flex'><p class='text-blue marginLeft25 h3'><a href='./roomInformation.html'onclick='roomGlobal(" + rooms.childNodes[1].textContent + ")'>DETAILS >></a></p><p class='text-blue marginLeftRight h3'> BOOK >></p> </div></div>";
+                    div += " <div class='col-xl-6'><p class='text-center text-blue font-SansSerifBldFLFCond h2'>" + number + "</p><p class='text-center h4 mt-4'>" + roomTitle + "</p><p class='text-center h4'>Historyc suits with a cassic look</p><img class='mx-auto d-block rounded' src='./images/rooms/roomsRandom/"+getRandomInt(18)+".jpg' alt='Room'title='Room' width='90%'><div class='d-flex'><p class='text-blue marginLeft25 h3'><a href='./roomInformation.html'onclick='roomGlobal(" + rooms.childNodes[1].textContent + ")'>DETAILS >></a></p> <a href='./contactUs.html#booked' class='text-blue marginLeftRight h3'> BOOK >></a> </div></div>";
                     $("#roomtotal").html(div);
                 }
             });
