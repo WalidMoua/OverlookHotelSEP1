@@ -41,6 +41,8 @@ const Rooms = {};
 
 function changeStartDate(event) {
   let d = new Date(event.target.value);
+  localStorage.setItem("UserStartDate", d);
+  
   let dYesterday = new Date();
   dYesterday.setDate(tomorrow.getDate() - 2);
 
@@ -50,6 +52,7 @@ function changeStartDate(event) {
     if (Date.parse(UserInput.checkOut) < Date.parse(d)) {
       alert("CHOSE A CHECK-OUT DATE AFTER THE CHECK-IN ");
     } else {
+     
       UserInput.checkIn = d;
       $(".today-date").html(
         `<h4 class="fs-6 text-blue">` +
@@ -66,12 +69,13 @@ function changeStartDate(event) {
 
 function changeEndDate(event) {
   let d = new Date(event.target.value);
-
+  localStorage.setItem("UserEndDate", d);
   if (Date.parse(d) < Date.parse(UserInput.checkIn)) {
     console.log(d, " a  ", UserInput.checkIn);
     alert("CHOSE A DATE AFTER TODAY'S DATE");
   } else {
     UserInput.checkOut = d;
+  
     $(".tomorrow-date").html(
       `<h4 class="fs-6 text-blue">` +
         weekName[d.getDay()] +
