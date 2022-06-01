@@ -56,29 +56,38 @@ function showOnlynoneBookedRooms() {
             var price = "";
             var extras = "";
             var div = " <div class='row pt-5'>";
-            console.log(arrayNonBookedRooms.length)
-            for (var index = 0; index < arrayNonBookedRooms.length; index++) {
+            var arrayAllRoomsdRooms = [];
+           
+            //for (var index = 0; index < arrayNonBookedRooms.length; index++) {
                 Array.from($(xml).find("room")).forEach((rooms) => {
-                    if(rooms.childNodes[1].textContent != arrayNonBookedRooms[index]) {
-                        roomTitle = rooms.childNodes[7].textContent;
-                        //1 -> room number
-                        //3 -> room price
-                        //5 -> room guests
-                        //7 -> room type
-                        //9 -> bed type
-                        //11 -> extras
-                        beds = rooms.childNodes[9].textContent;
-                        guestAmount = rooms.childNodes[5].textContent;
-                        number = "Room " + rooms.childNodes[1].textContent;
-                        price = rooms.childNodes[3].textContent;
-                        extras = rooms.childNodes[11].textContent;
-                        div += " <div class='col-xl-6'><p class='text-center text-blue font-SansSerifBldFLFCond h2'>" + number + "</p><p class='text-center h4 mt-4'>" + roomTitle + "</p><p class='text-center h4'>Historyc suits with a cassic look</p><img class='mx-auto d-block rounded' src='./images/rooms/roomsRandom/" + getRandomInt(17) + ".jpg' alt='Room'title='Room' width='90%'><div class='d-flex'><p class='text-blue marginLeft25 h3'><a href='./roomInformation.html'onclick='roomGlobal(" + rooms.childNodes[1].textContent + ")'>DETAILS >></a></p> <a href='./contactUs.html#booked' class='text-blue marginLeftRight h3'> BOOK >></a> </div></div>";
-                        $("#roomtotal").html(div);
-                    }
+
+                    arrayAllRoomsdRooms.push(rooms);
+                    
+
 
 
                 });
-            }
+               
+                for(var c=0;c<arrayAllRoomsdRooms.length;c++){
+                    for(var d=0;d<arrayNonBookedRooms.length;d++){
+              
+                    if(arrayNonBookedRooms[d]==arrayAllRoomsdRooms[c].childNodes[1].textContent){
+                        arrayAllRoomsdRooms.splice(c, 1);
+                    }
+                    }
+                }
+                for(var e=0;e<arrayAllRoomsdRooms.length;e++){
+                  console.log("allllllll-> "+arrayAllRoomsdRooms[e].childNodes[1].textContent);
+                    beds = arrayAllRoomsdRooms[e].childNodes[9].textContent;
+                    guestAmount = arrayAllRoomsdRooms[e].childNodes[5].textContent;
+                    number = "Room " + arrayAllRoomsdRooms[e].childNodes[1].textContent;
+                    price = arrayAllRoomsdRooms[e].childNodes[3].textContent;
+                    extras = arrayAllRoomsdRooms[e].childNodes[11].textContent;
+                    div += " <div class='col-xl-6'><p class='text-center text-blue font-SansSerifBldFLFCond h2'>" + number + "</p><p class='text-center h4 mt-4'>" + roomTitle + "</p><p class='text-center h4'>Historyc suits with a cassic look</p><img class='mx-auto d-block rounded' src='./images/rooms/roomsRandom/" + getRandomInt(17) + ".jpg' alt='Room'title='Room' width='90%'><div class='d-flex'><p class='text-blue marginLeft25 h3'><a href='./roomInformation.html'onclick='roomGlobal(" + rooms.childNodes[1].textContent + ")'>DETAILS >></a></p> <a href='./contactUs.html#booked' class='text-blue marginLeftRight h3'> BOOK >></a> </div></div>";
+                    $("#roomtotal").html(div);
+                }
+            //}
+            console.log(arrayAllRoomsdRooms[0].childNodes[1].textContent)
             div += "</div>";
         }
     );
