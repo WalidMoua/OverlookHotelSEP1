@@ -99,7 +99,7 @@ function showOnlynoneBookedRooms() {
 function overlappingDates(StartDate1, EndDate1, StartDate2, EndDate2) {
     if ((Date.parse(StartDate2) <= Date.parse(EndDate1)) && (Date.parse(StartDate1) <= Date.parse(EndDate2))) {
         console.log("are overlaping");
-        return true;
+        return true; 
     } else {
         console.log("are not overlaping");
         return false;
