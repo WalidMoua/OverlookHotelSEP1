@@ -3,8 +3,51 @@
     <booking>
         <id>0</id>
         <guest>
-            <name>Jack</name>
-            <phone>1218281</phone>
+            <name>Teste</name>
+            <phone>Teste</phone>
+            <birthday>
+                <day>18</day>
+                <month>5</month>
+                <year>2022</year>
+            </birthday>
+        </guest>
+        <dateInterval>
+            <arriveDate>
+                <day>20</day>
+                <month>5</month>
+                <year>2022</year>
+            </arriveDate>
+            <departureDate>
+                <day>25</day>
+                <month>5</month>
+                <year>2022</year>
+            </departureDate>
+        </dateInterval>
+        <room>
+            <number>302</number>
+            <price>259.0</price>
+            <guestAmount>2</guestAmount>
+            <type>Single Bedroom Suite</type>
+            <beds>King Size</beds>
+            <extras>Air conditioning
+                View
+                Small Kitchen</extras>
+        </room>
+        <guests>2</guests>
+        <extraInfo>dwadawdwa</extraInfo>
+        <totalPrice>1395.0</totalPrice>
+        <nightsSpent>5</nightsSpent>
+        <state>ARRIVED</state>
+        <extra>
+            <priceExtra>312.0</priceExtra>
+            <extras>smoking	</extras>
+        </extra>
+    </booking>
+    <booking>
+        <id>1</id>
+        <guest>
+            <name>Jack Spinola</name>
+            <phone>82130123</phone>
             <birthday>
                 <day>13</day>
                 <month>5</month>
@@ -13,38 +56,141 @@
         </guest>
         <dateInterval>
             <arriveDate>
-                <day>18</day>
+                <day>19</day>
                 <month>5</month>
                 <year>2022</year>
             </arriveDate>
             <departureDate>
-                <day>20</day>
+                <day>21</day>
                 <month>5</month>
                 <year>2022</year>
             </departureDate>
         </dateInterval>
         <room>
-            <number>302</number>
-            <price>100.0</price>
-            <type>ALWDWALDAW</type>
-            <beds>1</beds>
-            <bedRooms>2</bedRooms>
+            <number>207</number>
+            <price>169.0</price>
+            <guestAmount>2</guestAmount>
+            <type>Double Room</type>
+            <beds>King Size</beds>
+            <extras>Air conditioning</extras>
         </room>
-        <guests>5</guests>
-        <extraInfo>I will arrive late</extraInfo>
-        <totalPrice>0.0</totalPrice>
-        <nightsSpent>0</nightsSpent>
-        <state>ARRIVED</state>
-        <extra>
-            <priceExtra>192.21</priceExtra>
-            <extras>2 beds
-Breakfast</extras>
-        </extra>
+        <guests>3</guests>
+        <extraInfo>Guest will arrive at 8PM</extraInfo>
+        <totalPrice>338.0</totalPrice>
+        <nightsSpent>2</nightsSpent>
+        <state>CLOSED</state>
     </booking>
-
-
-
-
-
-    
+    <booking>
+        <id>2</id>
+        <guest>
+            <name>G test</name>
+            <phone>G test</phone>
+            <birthday>
+                <day>4</day>
+                <month>5</month>
+                <year>2022</year>
+            </birthday>
+        </guest>
+        <dateInterval>
+            <arriveDate>
+                <day>31</day>
+                <month>5</month>
+                <year>2022</year>
+            </arriveDate>
+            <departureDate>
+                <day>4</day>
+                <month>6</month>
+                <year>2022</year>
+            </departureDate>
+        </dateInterval>
+        <room>
+            <number>306</number>
+            <price>129.0</price>
+            <guestAmount>1</guestAmount>
+            <type>Single Room</type>
+            <beds>Single Bed</beds>
+            <extras>Air conditioning</extras>
+        </room>
+        <guests>2</guests>
+        <extraInfo></extraInfo>
+        <totalPrice>268.0</totalPrice>
+        <nightsSpent>4</nightsSpent>
+        <state>CLOSED</state>
+    </booking>
+    <booking>
+        <id>3</id>
+        <guest>
+            <name>G test</name>
+            <phone>G test</phone>
+            <birthday>
+                <day>20</day>
+                <month>5</month>
+                <year>2022</year>
+            </birthday>
+        </guest>
+        <dateInterval>
+            <arriveDate>
+                <day>24</day>
+                <month>5</month>
+                <year>2022</year>
+            </arriveDate>
+            <departureDate>
+                <day>31</day>
+                <month>5</month>
+                <year>2022</year>
+            </departureDate>
+        </dateInterval>
+        <room>
+            <number>303</number>
+            <price>259.0</price>
+            <guestAmount>2</guestAmount>
+            <type>Single Bedroom Suite</type>
+            <beds>King Size</beds>
+            <extras>Air conditioning
+View
+Small Kitchen</extras>
+        </room>
+        <guests>3</guests>
+        <extraInfo>G test</extraInfo>
+        <totalPrice>1813.0</totalPrice>
+        <nightsSpent>7</nightsSpent>
+        <state>ARRIVED</state>
+    </booking>
+    <booking>
+        <id>4</id>
+        <guest>
+            <name>wadadawawd</name>
+            <phone>dawdwadwa</phone>
+            <birthday>
+                <day>18</day>
+                <month>5</month>
+                <year>2022</year>
+            </birthday>
+        </guest>
+        <dateInterval>
+            <arriveDate>
+                <day>2</day>
+                <month>5</month>
+                <year>2022</year>
+            </arriveDate>
+            <departureDate>
+                <day>12</day>
+                <month>5</month>
+                <year>2022</year>
+            </departureDate>
+        </dateInterval>
+        <room>
+            <number>112</number>
+            <price>169.0</price>
+            <guestAmount>2</guestAmount>
+            <type>Double Room</type>
+            <beds>Twin beds</beds>
+            <extras>Air conditioning</extras>
+        </room>
+        <guests>2</guests>
+        <extraInfo>wdawadwa</extraInfo>
+        <totalPrice>1690.0</totalPrice>
+        <nightsSpent>10</nightsSpent>
+        <state>ARRIVED</state>
+    </booking>
 </bookings>
