@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&family=Playfair+Display+SC:wght@900&family=Prata&display=swap');
+
+body,
+html {
+
+    /*
+    font-family: 'Prata', serif; >>> main font for general text
+    font-family: 'Open Sans', sans-serif; >>> SansSerif (Use light or medium)
+    font-weight : 300; (Light)  >>> SansSerifBookFLF (relative name on figma)
+    font-weight : 500; (medium) >>> SansSerifBldFLFCond (relative name on figma)
+    */
+    font-family: 'Prata', serif;
+    color: #454545;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #454545;
+}
+
+.bg-blue {
+    background-color: #001D6E;
+}
+
+.text-blue {
+    color: #001D6E;
+}
+
+.font-SanSerifBook {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+.font-SansSerifBldFLFCond {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+}
+
+.social-icon-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-icons {
+    max-width: 50px;
+}
+
+
+@media only screen and (max-width: 991px) {
+    .navbar-brand {
+        flex: 0 1 auto;
+        display: block;
+        width: 76px;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: translateX(-50%);
+        text-align: center;
+    }
+
+    .navbar-brand img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .navbar-menu img {
+        max-height: 50px;
+        max-width: 50px;
+    }
+
+    .spacing-small {
+        margin-top: 41px !important;
+    }
+
+    .spacing {
+        margin-top: 100px !important;
+    }
+
+    .social-icon-container img {
+        max-width: 30px;
+    }
+
+    .font-small {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    .nav-height {
+        height: 150px;
+    }
+
+
+
+    .spacing-small {
+        margin-top: 115px !important;
+    }
+
+    .spacing {
+        margin-top: 220px !important;
+    }
+
+    .social-icon-container img {
+        max-width: 50px;
+    }
+
+    .font-small {
+        font-size: 10px;
+    }
+
+    .text-middle {
+        height: 100px;
+        line-height: 100px
+    }
+}
+
+.marginLeft25 {
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.mtText3{
+    margin-top: 10%;
+}
+
+.marginLeftRight {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: 10%;
+}
+
+.paddingLeft {
+    padding-left: 30%;
+}
+
+
+.carouselNextBox {
+    position: absolute;
+    bottom: 22%;
+    height: 15%;
+    background-color: #001D6E;
+    width: 60%;
+    text-align: center;
+    left: 20%;
+    color: white;
+    border-radius: 10px;
+ 
+}
+
+.marginTopCarouselText {
+    margin-top: 10%;
+}
+.marginTopNameCarousel{
+    margin-top: 4%;
+}
+@media only screen and (max-width: 880px) {
+    .heightBlueBox{
+        height: 15%;
+        bottom: 24%;
+    }
+    .marginTopDescriptionCarousel{
+        margin-top: 3%;
+    }
+}
+@media only screen and (max-width: 710px) {
+    .heightBlueBox{
+        height: 18%;
+        bottom: 30%;
+    }
+    .marginTopDescriptionCarousel{
+        margin-top: 3%;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .heightBlueBox{
+        height: 18%;
+        bottom: 40%;
+    }
+    .marginTopDescriptionCarousel{
+        margin-top: 20%;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .heightBlueBox{
+        height: 18%;
+        bottom: 50%;
+    }
+    .marginTopDescriptionCarousel{
+        margin-top: 20%;
+    }
+}
+.mtText1{
+    margin-top: 8.5%;
+}
+.mtText2{
+    margin-top: 7%;
+}
+
+
+.marginTopNameCarousel2{
+    margin-top: 4%;
+}
+.carouselNextBox2{
+
+}
+
+
+.carouselNextBox2 {
+    position: absolute;
+    bottom: 10%;
+    height: 10%;
+    background-color: #001D6E;
+    width: 60%;
+    text-align: center;
+    left: 20%;
+    color: white;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+.red{color: red;}
+
+
+
+.date-picker{
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.date-picker::-webkit-calendar-picker-indicator {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: 1px solid red;
+}
+
+.booking-form{
+    border: 3px solid #001D6E;
+    max-width: 80%;
+    border-radius: 8px;
+}
+
+.input-room-type{
+    border-radius: 25px;
+    border: solid 1px #001D6E;
+   background: transparent;
+   max-width: 300px;
+   padding: 10px 20px;
+}
+
+.booking-form-button{
+    border-radius: 25px;
+    border: solid 1px #001D6E;
+   background: transparent;
+   max-width: 300px;
+   padding: 10px 20px;
+}
